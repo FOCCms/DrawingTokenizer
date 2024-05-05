@@ -19,7 +19,7 @@
 		}
 
 		/**
-		 * Convert the selected drawings to an png image
+		 * Convert the selected drawings to image
 		 */
 		static async convertDrawing(filename, drawings, type, quality) {
 			let container = new PIXI.Container();
@@ -36,9 +36,6 @@
 				//await container.children[i].draw();
 			}
 			switch(type){
-				case "image/png":
-					filename += ".png";
-					break;
 				case "image/jpeg":
 					filename += ".jpeg";
 					break;
@@ -62,14 +59,15 @@
 		 * Convert canvas to Blob
 		 */
 		static getContainerBlob(container, type, quality) {
-			return new Promise(function(resolve, reject) {
-				console.log(canvas.app.renderer.extract.image(container, type, quality).src);
-				fetch(canvas.app.renderer.extract.image(container, type, quality).src)
-				.then(res => res.blob())
-				.then(blob => {
-					resolve(blob);
+			return new Promise(function (resolve, reject) {
+			  canvas.app.renderer.extract
+				.image(container, type, quality)
+				.then((image) => fetch(image.src))
+				.then((res) => res.blob())
+				.then((blob) => {
+				  resolve(blob);
 				});
-			})
+			});
 		  }
 
 		/**
@@ -162,8 +160,8 @@
 			<div class="form-group">
 				<label>Image type</label>
 				<select name="type">
-					<option value="image/png" selected="selected">Png</option>
-					<option value="image/webp">${WebPText}</option>
+					<option value="image/webp" selected="selected">${WebPText}</option>
+					<option value="image/Jpeg" >Jpeg</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -189,7 +187,7 @@
 				if(quality > 1) quality = 1;
 				
 				if(!IS_WEBP_EXPORT_SUPPORTED) {
-					type = "image/png";
+					type = "image/Jpeg";
 				}
 				if(filename.trim().length == 0) return ui.notifications.error(game.i18n.localize("DRAWINGTOKENIZER.error.NoFilenameEntered"));
 

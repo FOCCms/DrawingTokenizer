@@ -1,17 +1,20 @@
 # FoundryVTT - DrawingTokenizer
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/KayelGee/DrawingTokenizer?style=for-the-badge) 
-![GitHub Releases](https://img.shields.io/github/downloads/KayelGee/DrawingTokenizer/latest/total?style=for-the-badge) 
-![GitHub All Releases](https://img.shields.io/github/downloads/KayelGee/DrawingTokenizer/total?style=for-the-badge&label=Downloads+total)  
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/FOCCms/DrawingTokenizer?style=for-the-badge) 
+![GitHub Releases](https://img.shields.io/github/downloads/FOCCms/DrawingTokenizer/latest/total?style=for-the-badge) 
+![GitHub All Releases](https://img.shields.io/github/downloads/FOCCms/DrawingTokenizer/total?style=for-the-badge&label=Downloads+total)  
 
-**[Compatibility]**: *FoundryVTT* 0.8.6+  
+**[Compatibility]**: *FoundryVTT* 11+  
 **[Systems]**: *any*  
 **[Languages]**: *English*  
 
 Ever wanted to use your drawings for your tokens and actors? This module enables you to convert your drawings into images and use those for your tokens, actors etc.
 
+## V10 original
+It is modification of this module (https://github.com/KayelGee/DrawingTokenizer). I just added v11 support.
+
 ## Installation
 
-1. DrawingTokenizer using manifest URL: https://raw.githubusercontent.com/KayelGee/DrawingTokenizer/master/module.json
+1. DrawingTokenizer using manifest URL: https://raw.githubusercontent.com/FOCCms/DrawingTokenizer/master/module.json
 2. While loaded in World, enable **_DrawingTokenizer_** module.
 
 ## Usage
@@ -20,7 +23,3 @@ Select the drawings tool. Select your drawings you wish to convert, then click t
 WebP export is currently only supported by Chrome, but this is dynamically checked, so if your browser adds support then this will be automatically enabled.
 
 ![](DrawingTokenizer.gif)
-
-## Contact
-
-If you wish to contact me for any reason, reach me out on Discord using my tag: `KayelGee#5241`
